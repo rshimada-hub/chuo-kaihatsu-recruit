@@ -10,7 +10,7 @@
   // ===== 設定：デプロイ後にここを埋める =====
   var CONFIG = {
     // Apps Script ウェブアプリのURL（空の間は「プロトタイプ動作」＝送信せず完了表示）
-    ENDPOINT: '',
+    ENDPOINT: 'https://script.google.com/macros/s/AKfycbzW1ZhXbcZsHn_uq63jrHewpvY16pRQr6tQoy1EmA_NnpHJQLJx4OvM0fbEKfbpc1av3g/exec',
     // reCAPTCHA v3 サイトキー（空なら reCAPTCHA なしで動作）
     RECAPTCHA_SITEKEY: ''
   };
