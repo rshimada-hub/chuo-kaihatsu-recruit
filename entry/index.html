@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>採用エントリー｜株式会社中央開発</title>
+<meta name="description" content="株式会社中央開発の採用エントリーフォーム（新卒・中途）。">
+<meta name="robots" content="noindex">
+<!-- 簡易CSP（本番はサーバーのレスポンスヘッダーで同等以上を設定）。reCAPTCHA/Apps Script を許可 -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' https://www.google.com https://www.gstatic.com; frame-src https://www.google.com; connect-src 'self' https://script.google.com https://script.googleusercontent.com; form-action 'self' https://script.google.com; frame-ancestors 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="../assets/img/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/entry.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<g id="cmark"><g fill="none" stroke="currentColor" stroke-width="30" stroke-linecap="butt">
+<line x1="74.48" y1="-57" x2="12.12" y2="-93"/><line x1="-12.12" y1="-93" x2="-74.48" y2="-57"/>
+<line x1="-86.6" y1="-36" x2="-86.6" y2="36"/><line x1="-74.48" y1="57" x2="-12.12" y2="93"/>
+<line x1="12.12" y1="93" x2="74.48" y2="57"/></g></g>
+</defs></svg>
+
+<header class="top solid" id="top"><div class="wrap">
+  <a class="brand" href="../"><svg class="logo" viewBox="-110 -110 220 220"><use href="#cmark"/></svg>
+    <div><b>株式会社中央開発</b><span>CHUO KAIHATSU RECRUIT</span></div></a>
+  <nav class="nav"><a href="../" class="back">← 採用トップ</a></nav>
+</div></header>
+
+<section class="page-hero">
+  <svg class="cm" viewBox="-110 -110 220 220"><use href="#cmark"/></svg>
+  <div class="wrap">
+    <div class="en">Entry</div>
+    <h1>採用<span class="mk">エントリー</span>（新卒・中途）</h1>
+    <p>下記フォームよりご応募ください。担当者より折り返しご連絡いたします。</p>
+  </div>
+</section>
+
+<section class="formsec"><div class="wrap">
+  <!-- action は Apps Script のURL。送信は form.js の fetch で行う（CONFIG.ENDPOINT） -->
+  <form id="entryForm" class="form" method="post" action="#" autocomplete="on" novalidate>
+    <input type="hidden" name="_csrf" value=""><!-- 本番はサーバー発行のCSRFトークン -->
+    <div class="hp" aria-hidden="true"><label>会社URL<input type="text" name="company_url" tabindex="-1" autocomplete="off"></label></div>
+
+    <div class="fld">
+      <div class="lab"><b>応募区分</b><span class="badge req">必須</span></div>
+      <select name="type" required><option value="">選択してください</option><option>新卒採用</option><option>中途採用</option><option>まだ決めていない</option></select>
+      <span class="err">選択してください</span>
+    </div>
+    <div class="fld">
+      <div class="lab"><b>氏名</b><span class="badge req">必須</span></div>
+      <input name="name" type="text" required maxlength="60" autocomplete="name" placeholder="中央 太郎">
+      <span class="err">入力してください</span>
+    </div>
+    <div class="fld">
+      <div class="lab"><b>氏名（フリガナ）</b><span class="badge req">必須</span></div>
+      <input name="kana" type="text" required maxlength="60" placeholder="チュウオウ タロウ">
+      <span class="err">入力してください</span>
+    </div>
+    <div class="fld">
+      <div class="lab"><b>生年月日</b><span class="badge req">必須</span></div>
+      <div class="dob">
+        <div class="unit"><select name="birth_y" required aria-label="年"></select><span class="u">年</span></div>
+        <div class="unit"><select name="birth_m" required aria-label="月"></select><span class="u">月</span></div>
+        <div class="unit"><select name="birth_d" required aria-label="日"></select><span class="u">日</span></div>
+      </div>
+      <span class="err">選択してください</span>
+    </div>
+    <div class="fld">
+      <div class="lab"><b>企業名／学校名</b><span class="badge req">必須</span></div>
+      <input name="org" type="text" required maxlength="100" placeholder="○○株式会社 ／ ○○大学">
+      <span class="err">入力してください</span>
+    </div>
+    <div class="fld">
+      <div class="lab"><b>電話番号</b><span class="badge req">必須</span></div>
+      <input name="tel" type="tel" required maxlength="20" autocomplete="tel" inputmode="tel" placeholder="090-0000-0000">
+      <span class="err">入力してください</span>
+    </div>
+    <div class="fld">
+      <div class="lab"><b>メールアドレス</b><span class="badge req">必須</span></div>
+      <input name="email" type="email" required maxlength="120" autocomplete="email" inputmode="email" placeholder="example@mail.com">
+      <span class="err">メールアドレスを正しく入力してください</span>
+    </div>
+    <div class="fld">
+      <div class="lab"><b>お問い合わせ内容</b><span class="badge req">必須</span></div>
+      <textarea name="message" required maxlength="2000" placeholder="ご質問、志望のきっかけ、希望職種など"></textarea>
+      <span class="err">入力してください</span>
+    </div>
+
+    <div class="consent" id="consentBox">
+      <input id="consent" name="consent" type="checkbox" required>
+      <label for="consent"><a href="#" target="_blank" rel="noopener noreferrer">個人情報の取り扱い</a>に同意します。<br>ご入力の情報は、採用選考のご連絡にのみ利用します。</label>
+    </div>
+
+    <!-- reCAPTCHA v3 を使う場合：GO-LIVE手順でサイトキーを設定し、下記コメントを有効化
+    <script src="https://www.google.com/recaptcha/api.js?render=RECAPTCHA_SITEKEY"></script> -->
+
+    <button type="submit" class="submit">上記の内容で送信する</button>
+    <div class="formerr" id="formError" role="alert"></div>
+    <p class="recap">送信は SSL で暗号化されます。スパム対策のため、送信時に自動判定を行います。</p>
+    <p class="formnote">※ 未接続の間は原型動作（送信は保存されません）。接続後は入力内容が「応募一覧」スプレッドシートに記録され、担当へ通知されます。</p>
+  </form>
+
+  <div class="done" id="entryDone" role="status" aria-live="polite">
+    <div class="ck"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></div>
+    <h2>エントリーを受け付けました</h2>
+    <p>ご応募ありがとうございます。担当者より折り返しご連絡いたします。</p>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <a class="brand" href="../" style="text-decoration:none;color:inherit"><svg class="logo" viewBox="-110 -110 220 220" style="width:26px;height:26px;color:var(--brand)"><use href="#cmark"/></svg><b>株式会社中央開発</b></a>
+  <span>岩手県北上市本通り3丁目1-17 ／ 岩手県知事(12)第1205号</span>
+  <span class="proto">原型（プロトタイプ）</span>
+</div></footer>
+
+<script src="../assets/js/main.js" defer></script>
+<script src="../assets/js/form.js" defer></script>
+</body>
+</html>

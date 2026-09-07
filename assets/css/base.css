@@ -1,0 +1,137 @@
+/* =========================================================
+   中央開発 採用サイト — 共通スタイル (base.css)
+   トークン / リセット / タイポ / 共通コンポーネント
+   ブランド: マゼンタ #e4007f × 六角形C。写真前面・編集型。
+   ========================================================= */
+:root{
+  --brand:#e4007f; --brand-deep:#c1006c; --plum:#7d1e56; --plum-deep:#5f1442; --pink:#ff67b0;
+  --mk:rgba(228,0,127,.26);
+  --ink:#1b1519; --ink-2:#5b5058; --ink-3:#938994;
+  --paper:#faf8f7; --surface:#ffffff; --line:#ece5e9; --line-2:#dccfd7;
+  --dark:#181015; --dark-2:#2a1620;
+  --shadow:0 20px 50px -28px rgba(27,21,25,.4);
+  --shadow-lg:0 30px 70px -30px rgba(27,21,25,.4);
+  --r:4px;
+}
+:root:not([data-theme="light"]){ @media (prefers-color-scheme:dark){
+  --ink:#f4eef2; --ink-2:#b3a8b1; --ink-3:#867c86;
+  --paper:#100c0f; --surface:#181318; --line:#2a232a; --line-2:#3b323a;
+  --mk:rgba(255,103,176,.3);
+  --shadow:0 24px 60px -30px rgba(0,0,0,.75); --shadow-lg:0 34px 80px -32px rgba(0,0,0,.75);
+}}
+:root[data-theme="dark"]{
+  --ink:#f4eef2; --ink-2:#b3a8b1; --ink-3:#867c86;
+  --paper:#100c0f; --surface:#181318; --line:#2a232a; --line-2:#3b323a;
+  --mk:rgba(255,103,176,.3);
+  --shadow:0 24px 60px -30px rgba(0,0,0,.75); --shadow-lg:0 34px 80px -32px rgba(0,0,0,.75);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Noto Sans JP",system-ui,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  line-height:1.9;font-size:16px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;line-height:1.3;margin:0;font-weight:900}
+.wrap{max-width:1400px;margin:0 auto;padding:0 clamp(24px,4vw,72px)}
+.en{font-family:"Anton",sans-serif;text-transform:uppercase;letter-spacing:.01em}
+.label{font-family:"Outfit",sans-serif;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  font-size:11.5px;color:var(--brand)}
+
+/* 蛍光ペン風マーカー（編集感） */
+.mk{background-image:linear-gradient(transparent 56%,var(--mk) 56%);background-repeat:no-repeat;
+  background-size:0% 100%;transition:background-size .85s cubic-bezier(.4,0,.2,1) .15s;padding:0 .06em}
+.in .mk,.mk.in{background-size:100% 100%}
+
+/* ヘッダー */
+.top{position:fixed;inset:0 0 auto;z-index:40;transition:background .3s}
+.top.solid{background:color-mix(in srgb,var(--surface) 90%,transparent);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;height:70px;gap:24px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink)}
+.brand .logo{width:30px;height:30px;color:var(--brand)}
+.brand b{font-family:"Zen Kaku Gothic New";font-weight:700;font-size:15px}
+.brand span{font-family:"Outfit";font-weight:600;font-size:9px;letter-spacing:.15em;color:var(--brand);
+  display:block;line-height:1.2}
+.top.ontop .brand,.top.ontop .nav a{color:#fff}
+.top.ontop .brand .logo,.top.ontop .brand span{color:#fff}
+.nav{margin-left:auto;display:flex;gap:26px;align-items:center}
+.nav a{font-size:13px;color:var(--ink-2);text-decoration:none;font-weight:500;transition:.16s}
+.nav a:hover{color:var(--brand)!important}
+.nav .cta{background:var(--brand);color:#fff!important;padding:10px 20px;border-radius:var(--r);
+  font-weight:700;font-family:"Zen Kaku Gothic New"}
+.nav .cta:hover{background:var(--brand-deep)}
+.nav .back{font-family:"Outfit";font-size:12px}
+@media(max-width:940px){.nav a:not(.cta){display:none}}
+
+/* 汎用セクション見出し */
+.sec{padding:clamp(70px,10vw,130px) 0}
+.sec.white{background:var(--surface)}
+.shead{display:flex;align-items:baseline;gap:18px;margin-bottom:clamp(32px,5vw,56px)}
+.shead .no{font-family:"Anton";font-size:clamp(38px,6vw,84px);color:var(--line-2);line-height:.8}
+.shead .tx .label{margin-bottom:12px;display:block}
+.shead .tx h2{font-size:clamp(26px,4vw,52px)}
+.shead .tx p{color:var(--ink-2);margin:14px 0 0;font-size:clamp(15px,1.4vw,17px);max-width:60ch}
+
+/* ヒーロー（共通の枠。写真は各ページで差し替え） */
+.hero{position:relative;display:flex;align-items:flex-end;overflow:hidden;color:#fff}
+.hero .photo{position:absolute;inset:0;background:
+   linear-gradient(180deg,rgba(24,16,21,.15),rgba(24,16,21,.78)),
+   linear-gradient(115deg,var(--dark),var(--dark-2) 55%,#3a1830)}
+.hero .photo::after{content:"";position:absolute;inset:0;opacity:.5;
+  background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.04) 0 2px,transparent 2px 9px)}
+.hero .cm{position:absolute;color:var(--brand);pointer-events:none}
+.photo-tag{position:absolute;top:88px;right:clamp(20px,4vw,72px);z-index:3;display:flex;align-items:center;gap:8px;
+  font-family:"Outfit";font-size:11px;letter-spacing:.1em;color:rgba(255,255,255,.6);
+  border:1px solid rgba(255,255,255,.25);padding:6px 12px}
+.photo-tag svg{width:14px;height:14px}
+.hero .inner{position:relative;z-index:2;width:100%;padding:0 0 clamp(48px,8vh,96px)}
+.hero .kick{font-family:"Anton";line-height:.86;color:rgba(255,255,255,.13)}
+.hero h1{font-weight:900;letter-spacing:.02em;text-shadow:0 2px 30px rgba(0,0,0,.4)}
+.hero h1 .mk{--mk:rgba(228,0,127,.85);color:#fff}
+.hero .lead{color:#e4dbe1}
+
+/* 右サイド縦タブ ＋ トップへ戻る */
+.rail{position:fixed;right:0;top:50%;z-index:45;display:flex;flex-direction:column;
+  opacity:0;pointer-events:none;transform:translate(34px,-50%);transition:opacity .3s,transform .35s}
+.rail.on{opacity:1;pointer-events:auto;transform:translate(0,-50%)}
+.rail a{writing-mode:vertical-rl;display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;
+  font-family:"Zen Kaku Gothic New";font-weight:700;font-size:15px;letter-spacing:.14em;padding:22px 14px;
+  transition:padding .16s;box-shadow:var(--shadow)}
+.rail a.s,.rail a.ent{background:var(--brand)}
+.rail a.c,.rail a.doc{background:var(--plum)}
+.rail a:hover{padding-left:22px}
+.rail a small{font-family:"Anton";font-size:10px;letter-spacing:.04em;opacity:.8}
+.rail a svg{width:15px;height:15px}
+.backtop{position:fixed;right:16px;bottom:16px;z-index:45;width:46px;height:46px;border-radius:99px;
+  background:var(--ink);color:var(--paper);border:none;display:grid;place-items:center;cursor:pointer;
+  opacity:0;pointer-events:none;transition:.3s;box-shadow:var(--shadow)}
+.backtop.on{opacity:1;pointer-events:auto}
+.backtop:hover{background:var(--brand)}
+.backtop svg{width:20px;height:20px}
+@media(max-width:640px){
+  .rail{top:auto;bottom:0;left:0;right:0;flex-direction:row;transform:translateY(34px)}
+  .rail.on{transform:none}
+  .rail a{writing-mode:horizontal-tb;flex:1;justify-content:center;padding:15px;letter-spacing:.06em}
+  .backtop{bottom:70px}
+}
+
+/* Entryバンド（共通ベース） */
+.entry-band{position:relative;background:var(--dark);color:#fff;text-align:center;overflow:hidden}
+.entry-band .big{font-family:"Anton"}
+
+/* フッター */
+footer{background:var(--surface);border-top:1px solid var(--line)}
+footer .wrap{padding:40px clamp(24px,4vw,72px);display:flex;flex-wrap:wrap;gap:10px 24px;align-items:center;
+  color:var(--ink-3);font-size:12px}
+footer .brand b{font-size:14px;color:var(--ink)}
+.proto{background:var(--mk);color:var(--brand-deep);font-size:11px;font-weight:700;padding:3px 10px;
+  border-radius:99px;margin-left:auto}
+
+/* スクロール演出 */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .mk{background-size:100% 100%!important;transition:none}
+  *{scroll-behavior:auto}
+}

@@ -1,0 +1,56 @@
+/* =========================================================
+   採用エントリー（応募フォーム） entry.css — base.css の後に読み込む
+   PGの採用エントリー構成準拠（新卒・中途 共通）
+   ========================================================= */
+.page-hero{background:linear-gradient(120deg,var(--dark),var(--dark-2));color:#fff;padding:112px 0 40px;position:relative;overflow:hidden}
+.page-hero .cm{position:absolute;right:-40px;top:-20px;width:230px;height:230px;color:var(--brand);opacity:.16}
+.page-hero .wrap{position:relative;max-width:760px}
+.page-hero .en{font-size:clamp(40px,9vw,84px);line-height:.9;color:rgba(255,255,255,.14)}
+.page-hero h1{font-size:clamp(24px,5vw,40px);margin-top:-.1em}
+.page-hero h1 .mk{--mk:rgba(228,0,127,.85);color:#fff}
+.page-hero p{color:#d8ccd4;margin-top:12px;font-size:13.5px}
+
+.formsec{padding:clamp(40px,7vw,68px) 0}
+.formsec .wrap{max-width:760px}
+.form{margin-top:4px}
+.fld{margin-top:26px}
+.fld>.lab{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.fld>.lab b{font-weight:700;font-size:15px;font-family:"Zen Kaku Gothic New"}
+.badge{font-size:10px;font-weight:700;letter-spacing:.04em;padding:2px 8px;border-radius:3px;font-family:"Zen Kaku Gothic New"}
+.badge.req{background:var(--brand);color:#fff}
+.badge.any{background:var(--line);color:var(--ink-2)}
+.fld input,.fld select,.fld textarea{width:100%;font:inherit;font-size:15px;padding:13px 14px;
+  border:1px solid var(--line-2);border-radius:var(--r);background:var(--surface);color:var(--ink);transition:.15s}
+.fld input::placeholder,.fld textarea::placeholder{color:var(--ink-3)}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--mk)}
+.fld textarea{resize:vertical;min-height:130px}
+.dob{display:flex;gap:10px;align-items:center}
+.dob .unit{display:flex;align-items:center;gap:6px;flex:1}
+.dob select{text-align:center}
+.dob .u{font-size:13px;color:var(--ink-2);flex:none}
+.err{color:var(--brand);font-size:12px;margin-top:6px;display:none}
+.fld.invalid input,.fld.invalid select,.fld.invalid textarea{border-color:var(--brand)}
+.fld.invalid .err{display:block}
+.consent{margin-top:28px;display:flex;gap:12px;align-items:flex-start;background:var(--surface);
+  border:1px solid var(--line);border-radius:var(--r);padding:16px 18px}
+.consent.invalid{border-color:var(--brand)}
+.consent input{width:20px;height:20px;flex:none;margin-top:2px;accent-color:var(--brand)}
+.consent label{font-size:13px;color:var(--ink-2)}
+.consent a{color:var(--brand)}
+/* ハニーポット（人間には不可視・ボット対策） */
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.cf-turnstile,.g-recaptcha-note{margin-top:22px}
+.submit{margin-top:24px;width:100%;background:var(--brand);color:#fff;border:none;padding:17px;border-radius:var(--r);
+  font:inherit;font-weight:700;font-size:16px;font-family:"Zen Kaku Gothic New";cursor:pointer;transition:.16s}
+.submit:hover{background:var(--brand-deep)}
+.submit:disabled{opacity:.55;cursor:progress}
+.recap{font-size:11px;color:var(--ink-3);margin-top:16px;line-height:1.7;text-align:center}
+.formnote{font-size:11.5px;color:var(--ink-3);margin-top:14px;line-height:1.7}
+.formerr{display:none;margin-top:16px;background:var(--mk);color:var(--brand-deep);border-radius:var(--r);padding:12px 16px;font-size:13px;font-weight:700}
+.formerr.on{display:block}
+.done{display:none;text-align:center;padding:52px 24px}
+.done.on{display:block}
+.done .ck{width:62px;height:62px;border-radius:99px;background:var(--ok,#1f9d6b);color:#fff;display:grid;place-items:center;margin:0 auto 18px}
+.done h2{font-size:22px}
+.done p{color:var(--ink-2);font-size:14px;margin-top:10px}
+@media(max-width:520px){.dob{flex-wrap:wrap}}
