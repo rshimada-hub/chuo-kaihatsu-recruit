@@ -7,17 +7,39 @@
 .hero h1{font-size:clamp(34px,6.5vw,80px)}
 .hero .lead{max-width:52ch;margin:24px 0 0;font-size:clamp(15px,1.5vw,18px)}
 
-/* 3つの魅力 */
-.merit-head{max-width:640px;margin-bottom:clamp(30px,5vw,52px)}
+/* 3つの魅力（Reason 交互レイアウト） */
+.merit{position:relative;overflow:hidden}
+.merit-head{max-width:640px;margin-bottom:clamp(20px,4vw,40px)}
 .merit-head .label{display:block;margin-bottom:12px}
 .merit-head h2{font-size:clamp(26px,4vw,50px)}
-.merits{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.merit-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:clamp(26px,3vw,34px) clamp(24px,3vw,30px);transition:.18s}
-.merit-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--line-2)}
-.merit-card .mn{font-family:"Anton";font-size:46px;line-height:1;color:var(--brand)}
-.merit-card h3{font-size:19px;margin-top:16px;line-height:1.45}
-.merit-card p{font-size:13.5px;color:var(--ink-2);margin-top:12px;line-height:1.9}
-@media(max-width:820px){.merits{grid-template-columns:1fr}}
+.reasons{display:flex;flex-direction:column;gap:clamp(52px,9vw,116px);margin-top:clamp(40px,6vw,72px)}
+.reason{position:relative;display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(30px,5vw,68px);align-items:center}
+.reason.rev .reason-photo{order:2}
+/* 透かしの大きな番号 */
+.reason .rno{position:absolute;top:-.5em;font-family:"Anton";font-size:clamp(120px,19vw,250px);line-height:1;
+  color:var(--line-2);opacity:.5;z-index:0;pointer-events:none;user-select:none}
+.reason:not(.rev) .rno{right:4%}
+.reason.rev .rno{left:4%}
+/* 写真＋背面のブランド色ブロック */
+.reason-photo{position:relative;z-index:1}
+.reason-photo::before{content:"";position:absolute;left:-16px;bottom:-16px;width:62%;height:64%;background:var(--brand);z-index:-1}
+.photo-slot{aspect-ratio:4/3;background:linear-gradient(135deg,var(--line),var(--line-2));display:flex;
+  flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--ink-3);
+  box-shadow:var(--shadow)}
+.photo-slot svg{width:32px;height:32px;opacity:.7}
+.photo-slot .ptxt{font-size:12px;letter-spacing:.08em}
+/* 本文 */
+.reason-body{position:relative;z-index:1}
+.reason-body .rlabel{font-family:"Outfit";font-weight:700;letter-spacing:.2em;font-size:12px;color:var(--brand)}
+.reason-body h3{font-size:clamp(22px,3vw,32px);margin-top:12px;line-height:1.5;font-weight:900}
+.reason-body .rule{width:46px;height:2px;background:var(--brand);margin:20px 0}
+.reason-body p{color:var(--ink-2);font-size:14.5px;line-height:2}
+@media(max-width:820px){
+  .reason{grid-template-columns:1fr;gap:22px}
+  .reason.rev .reason-photo{order:0}
+  .reason .rno{font-size:96px;right:auto!important;left:0!important}
+  .reason-photo::before{left:-10px;bottom:-10px}
+}
 
 /* ① 経営理念（三角形） */
 .phi{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,64px);align-items:center}
