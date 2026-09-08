@@ -23,7 +23,8 @@
 .sign small{font-family:"Outfit";letter-spacing:.14em;color:var(--ink-3);font-size:11px;display:block}
 .sign b{font-family:"Zen Kaku Gothic New";font-size:18px}
 .media .video{position:relative;aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;
-  background:linear-gradient(150deg,var(--dark),#33172a);display:grid;place-items:center;cursor:pointer;box-shadow:var(--shadow-lg)}
+  background:linear-gradient(150deg,var(--dark),#33172a);display:grid;place-items:center;box-shadow:var(--shadow-lg)}
+.media .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .media .video .play{width:76px;height:76px;border-radius:99px;background:var(--brand);display:grid;place-items:center;transition:.2s}
 .media .video:hover .play{transform:scale(1.07)}
 .media .video .play svg{width:26px;height:26px;color:#fff;margin-left:4px}
