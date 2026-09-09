@@ -1,60 +1,61 @@
 /* =========================================================
    トップページ固有スタイル (top.css) — base.css の後に読み込む
+   M&A総研寄り：セリフ英字＋透かし／余白広め／マゼンタは差し色のみ
    ========================================================= */
 
-/* ヒーロー個別サイズ */
+/* ヒーロー */
 .hero{min-height:100svh}
-.hero .cm{right:-8%;top:-6%;width:min(50vw,560px);height:min(50vw,560px);opacity:.13}
-.hero .kick{font-size:clamp(48px,15vw,190px);margin-bottom:-.06em}
-.hero h1{font-size:clamp(38px,7.6vw,96px)}
-.hero .lead{max-width:56ch;margin:26px 0 0;font-size:clamp(15px,1.5vw,19px);line-height:1.95}
+.hero .cm{right:-8%;top:-6%;width:min(48vw,540px);height:min(48vw,540px);opacity:.1}
+.hero .kick{font-size:clamp(30px,5vw,60px);margin-bottom:6px}
+.hero h1{font-size:clamp(36px,6.6vw,88px);line-height:1.34}
+.hero .lead{max-width:56ch;margin:26px 0 0;font-size:clamp(15px,1.5vw,18px);line-height:2}
 .hero .scroll{position:absolute;left:clamp(20px,4vw,72px);bottom:20px;z-index:3;
-  font-family:"Outfit";font-size:10px;letter-spacing:.3em;color:rgba(255,255,255,.55);writing-mode:vertical-rl}
+  font-family:"Cormorant Garamond",serif;font-style:italic;font-size:13px;letter-spacing:.16em;
+  color:rgba(255,255,255,.6);writing-mode:vertical-rl}
 
-/* ② 社長メッセージ */
-.msg-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(30px,5vw,64px);align-items:end}
-.msg h2{font-size:clamp(30px,4.4vw,58px);line-height:1.45}
-.msg .body{margin-top:30px;color:var(--ink-2);font-size:17px;max-width:60ch}
-.msg .body p+p{margin-top:16px}
-.sign{margin-top:32px;display:flex;align-items:center;gap:16px}
-.sign .p{width:60px;height:74px;flex:none;border-radius:var(--r);overflow:hidden;position:relative;
-  background:linear-gradient(150deg,var(--plum),var(--brand));display:grid;place-items:center;color:#fff;
+/* ② 社長メッセージ（deep セクション） */
+.msg-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:clamp(34px,5vw,72px);align-items:center}
+.msg h2{font-size:clamp(26px,3.6vw,46px);line-height:1.5;font-weight:700}
+.msg .body{margin-top:30px;color:#cfc3cb;font-size:16px;max-width:60ch;line-height:2.1}
+.msg .body p+p{margin-top:18px}
+.sign{margin-top:34px;display:flex;align-items:center;gap:16px}
+.sign .p{width:58px;height:72px;flex:none;border-radius:var(--r);overflow:hidden;position:relative;
+  background:linear-gradient(160deg,var(--plum),var(--brand));display:grid;place-items:center;color:#fff;
   font-family:"Zen Kaku Gothic New";font-weight:900;font-size:22px}
-.sign small{font-family:"Outfit";letter-spacing:.14em;color:var(--ink-3);font-size:11px;display:block}
-.sign b{font-family:"Zen Kaku Gothic New";font-size:18px}
+.sign small{font-family:"Outfit";letter-spacing:.14em;color:rgba(255,255,255,.5);font-size:11px;display:block}
+.sign b{font-family:"Zen Kaku Gothic New";font-size:17px;color:#fff}
 .media .video{position:relative;aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;
-  background:linear-gradient(150deg,var(--dark),#33172a);display:grid;place-items:center;box-shadow:var(--shadow-lg)}
+  background:#241019;box-shadow:0 30px 70px -30px rgba(0,0,0,.7)}
 .media .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.media .video .play{width:76px;height:76px;border-radius:99px;background:var(--brand);display:grid;place-items:center;transition:.2s}
-.media .video:hover .play{transform:scale(1.07)}
-.media .video .play svg{width:26px;height:26px;color:#fff;margin-left:4px}
-.media .cap{display:block;margin-top:12px;font-family:"Outfit";font-size:11px;letter-spacing:.06em;color:var(--ink-3)}
+.media .cap{display:block;margin-top:14px;font-family:"Outfit";font-size:11px;letter-spacing:.05em;color:rgba(255,255,255,.5)}
 @media(max-width:800px){.msg-grid{grid-template-columns:1fr}}
 
-/* ③ 成長 + 事業 */
-.growth-lead{display:flex;flex-wrap:wrap;gap:24px 48px;align-items:flex-end;margin:36px 0 0}
-.growth-lead .big{font-family:"Anton";font-size:clamp(58px,9.5vw,124px);line-height:.9;color:var(--brand);
-  font-variant-numeric:tabular-nums}
-.growth-lead .big s{text-decoration:none;color:var(--ink-3)}
-.growth-lead .big em{font-style:normal;font-size:.5em;color:var(--ink)}
+/* ③ 成長 + 事業（white） */
+.growth-lead{display:flex;flex-wrap:wrap;gap:20px 52px;align-items:flex-end;margin:6px 0 0}
+.growth-lead .big{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(56px,9vw,120px);
+  line-height:.92;color:var(--brand-deep);font-variant-numeric:tabular-nums}
+.growth-lead .big s{text-decoration:none;color:var(--ink-3);font-size:.5em}
+.growth-lead .big em{font-style:normal;font-size:.42em;color:var(--ink)}
+.growth-lead .big .arw{color:var(--line-2);font-size:.6em;padding:0 .1em}
 .chartwrap{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(24px,4vw,48px);align-items:center;
-  background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,3vw,34px);margin-top:26px}
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:clamp(22px,3vw,36px);margin-top:34px}
 .chartwrap svg{width:100%;height:auto;display:block}
-.layers{display:flex;flex-direction:column;gap:14px}
-.ly{display:flex;gap:13px;align-items:flex-start;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.layers{display:flex;flex-direction:column;gap:16px}
+.ly{display:flex;gap:13px;align-items:flex-start;padding-bottom:16px;border-bottom:1px solid var(--line)}
 .ly:last-child{border-bottom:none;padding-bottom:0}
-.ly .sw{width:14px;height:14px;border-radius:2px;flex:none;margin-top:5px}
+.ly .sw{width:12px;height:12px;border-radius:2px;flex:none;margin-top:6px}
 .ly h4{font-size:14.5px;font-weight:700;font-family:"Zen Kaku Gothic New"}
-.ly p{font-size:12px;color:var(--ink-2);margin:2px 0 0;line-height:1.6}
+.ly p{font-size:12px;color:var(--ink-2);margin:3px 0 0;line-height:1.7}
 .ly .gtag{font-family:"Outfit";font-size:9.5px;font-weight:700;letter-spacing:.08em;color:var(--brand);
   border:1px solid var(--brand);border-radius:99px;padding:1px 7px;margin-left:6px;vertical-align:middle}
-.chart-cap{font-size:11.5px;color:var(--ink-3);margin-top:14px}
+.chart-cap{font-size:11.5px;color:var(--ink-3);margin-top:16px}
 
 /* エリア拡大（地図） */
-.area-exp{margin-top:26px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
-  padding:clamp(20px,3vw,30px) clamp(20px,3vw,34px)}
-.area-exp .hd{display:flex;align-items:center;gap:12px;margin-bottom:20px}
-.area-exp .hd h3{font-size:17px}
+.area-exp{margin-top:30px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  padding:clamp(24px,3vw,34px)}
+.area-exp .hd{display:flex;align-items:center;gap:14px;margin-bottom:24px}
+.area-exp .hd .eng{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:26px;color:var(--brand-deep)}
+.area-exp .hd h3{font-size:16px;font-weight:700}
 .area-maps{display:flex;align-items:flex-start;justify-content:center;gap:clamp(8px,2vw,30px);flex-wrap:nowrap}
 .mstage{flex:1;min-width:0;text-align:center}
 .map{display:flex;justify-content:center;height:clamp(160px,20vw,240px)}
@@ -69,60 +70,60 @@
 .minfo .yr{font-family:"Outfit";font-weight:700;font-size:12px;color:var(--brand);letter-spacing:.08em;display:block;margin-top:16px}
 .minfo h4{font-family:"Zen Kaku Gothic New";font-weight:700;font-size:clamp(16px,2vw,22px);margin-top:5px}
 .minfo p{font-size:12.5px;color:var(--ink-2);margin:5px auto 0;max-width:22ch}
-.marrow{align-self:center;font-family:"Anton";color:var(--brand);font-size:clamp(20px,3vw,34px);flex:0 0 auto;padding-top:6%}
+.marrow{align-self:center;font-family:"Cormorant Garamond",serif;color:var(--line-2);font-size:clamp(22px,3vw,38px);flex:0 0 auto;padding-top:6%}
 @media(max-width:820px){.chartwrap{grid-template-columns:1fr}}
 @media(max-width:640px){.area-maps{flex-direction:column;align-items:center}.mstage{width:100%}.marrow{transform:rotate(90deg);padding:0}}
 
-/* 事業カード */
-.biz{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;transition:.18s}
-.card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--line-2)}
-.card .ic{width:40px;height:40px;border-radius:10px;background:var(--mk);color:var(--brand);display:grid;place-items:center;margin-bottom:14px}
-.card .ic svg{width:21px;height:21px}
+/* 事業カード（フラット・マゼンタ差し色） */
+.biz{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:48px;
+  background:var(--line);border:1px solid var(--line)}
+.card{background:var(--surface);padding:30px 26px;transition:.2s;position:relative}
+.card:hover{background:var(--paper)}
+.card .ic{width:40px;height:40px;color:var(--brand);display:grid;place-items:center;margin-bottom:16px}
+.card .ic svg{width:26px;height:26px}
 .card h3{font-size:16px;font-weight:700}
-.card p{font-size:13px;color:var(--ink-2);margin:8px 0 0}
-.card.expand{background:linear-gradient(150deg,var(--brand),var(--plum));color:#fff;border:none}
-.card.expand .ic{background:rgba(255,255,255,.18);color:#fff}
-.card.expand p{color:#ffdcee}
+.card p{font-size:13px;color:var(--ink-2);margin:9px 0 0;line-height:1.8}
+.card.expand::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--brand)}
 .card .tagx{display:inline-block;font-family:"Outfit";font-size:10px;font-weight:700;letter-spacing:.1em;
-  background:rgba(255,255,255,.2);padding:2px 8px;border-radius:99px;margin-bottom:10px}
+  color:var(--brand);border:1px solid var(--brand);padding:2px 8px;border-radius:99px;margin-bottom:12px}
 @media(max-width:840px){.biz{grid-template-columns:1fr}}
 
-/* ④ 人を育てる */
+/* ④ 人を育てる（deep） */
 .people{position:relative;background:var(--dark);color:#fff;overflow:hidden}
-.people .photo{position:absolute;inset:0;opacity:.5;background:
-  linear-gradient(90deg,var(--dark) 25%,transparent),linear-gradient(150deg,#3a1830,var(--dark-2))}
-.people .cm{position:absolute;right:-6%;bottom:-14%;width:min(46vw,460px);height:min(46vw,460px);color:var(--brand);opacity:.16}
+.people .photo{position:absolute;inset:0;opacity:.42;background:
+  linear-gradient(90deg,var(--dark) 28%,transparent),linear-gradient(150deg,#331726,var(--dark-2))}
+.people .cm{position:absolute;right:-6%;bottom:-14%;width:min(44vw,440px);height:min(44vw,440px);color:var(--brand);opacity:.12}
 .people .wrap{position:relative;z-index:2}
-.people .label{color:var(--pink)}
-.people h2{font-size:clamp(30px,5.2vw,68px);margin-top:18px;line-height:1.38}
-.people h2 .mk{--mk:rgba(228,0,127,.9)}
-.people .lead{color:#d8ccd4;max-width:66ch;margin-top:28px;font-size:clamp(16px,1.5vw,19px);line-height:1.95}
-.pillars{margin-top:clamp(36px,5vw,56px);display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
-  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12)}
-.pillars .it{background:var(--dark);padding:28px 24px}
-.pillars .it .n{font-family:"Anton";font-size:34px;color:var(--brand);line-height:1}
-.pillars .it h3{font-size:16px;margin-top:12px}
-.pillars .it p{color:#c2b5c0;font-size:12.5px;margin-top:8px}
+.people .shead .eng{color:#fff}
+.people .shead .jp{color:rgba(255,255,255,.6)}
+.people h2{font-size:clamp(28px,4vw,54px);margin-top:22px;line-height:1.44;font-weight:700}
+.people h2 .em{color:var(--pink)}
+.people .lead{color:#d8ccd4;max-width:66ch;margin-top:28px;font-size:clamp(16px,1.5vw,18px);line-height:2.05}
+.pillars{margin-top:clamp(40px,5vw,60px);display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.13)}
+.pillars .it{background:var(--dark);padding:30px 26px}
+.pillars .it .n{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:44px;color:var(--pink);line-height:1}
+.pillars .it h3{font-size:16px;margin-top:14px;font-weight:700}
+.pillars .it p{color:#c2b5c0;font-size:12.5px;margin-top:10px;line-height:1.8}
 @media(max-width:800px){.pillars{grid-template-columns:1fr}}
 
 /* ⑤ Entry（新卒/中途 分割） */
-.entry-band{padding:clamp(56px,9vw,96px) 24px 26px}
-.entry-band .big{font-size:clamp(60px,13vw,150px);line-height:.9;letter-spacing:.02em}
-.entry-band .pill{display:inline-block;margin-top:14px;border:1px solid rgba(255,255,255,.4);border-radius:99px;
+.entry-band{padding:clamp(64px,10vw,110px) 24px 30px}
+.entry-band .big{font-size:clamp(64px,13vw,150px);line-height:.92}
+.entry-band .pill{display:inline-block;margin-top:14px;border:1px solid rgba(255,255,255,.36);border-radius:99px;
   padding:9px 26px;font-size:14px;font-weight:700;font-family:"Zen Kaku Gothic New"}
 .split{display:grid;grid-template-columns:1fr 1fr}
-.panel{padding:clamp(40px,6vw,64px) clamp(28px,4vw,52px);display:flex;flex-direction:column;gap:22px;position:relative;overflow:hidden}
+.panel{padding:clamp(44px,6vw,68px) clamp(28px,4vw,54px);display:flex;flex-direction:column;gap:24px;position:relative;overflow:hidden}
 .panel.shinso{background:var(--brand)}.panel.chuto{background:var(--plum)}
-.panel .cms{position:absolute;right:-30px;top:-30px;width:180px;height:180px;color:#fff;opacity:.1}
+.panel .cms{position:absolute;right:-30px;top:-30px;width:170px;height:170px;color:#fff;opacity:.09}
 .panel .kanji{color:#fff;position:relative;z-index:2}
-.panel .kanji .rc{font-family:"Anton";font-size:16px;letter-spacing:.05em;opacity:.85}
-.panel .kanji .jp{font-family:"Zen Kaku Gothic New";font-weight:900;font-size:clamp(40px,6vw,60px);line-height:1.05}
+.panel .kanji .rc{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:22px;letter-spacing:.05em;opacity:.85}
+.panel .kanji .jp{font-family:"Zen Kaku Gothic New";font-weight:900;font-size:clamp(38px,6vw,58px);line-height:1.08;margin-top:2px}
 .panel .kanji .jp small{font-size:.4em;margin-left:6px}
 .panel .btns{display:flex;flex-direction:column;gap:11px;position:relative;z-index:2}
 .panel .btns a{display:flex;align-items:center;justify-content:space-between;text-decoration:none;
   padding:16px 24px;border-radius:var(--r);font-weight:700;font-size:15px;font-family:"Zen Kaku Gothic New";transition:.16s}
-.panel .btns a.line{border:1.5px solid rgba(255,255,255,.6);color:#fff}
+.panel .btns a.line{border:1.5px solid rgba(255,255,255,.55);color:#fff}
 .panel .btns a.line:hover{background:rgba(255,255,255,.12)}
 .panel .btns a.fill{background:#fff}
 .panel.shinso .btns a.fill{color:var(--brand-deep)}.panel.chuto .btns a.fill{color:var(--plum-deep)}

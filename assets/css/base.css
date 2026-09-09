@@ -28,16 +28,19 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:70px}
 body{margin:0;background:var(--paper);color:var(--ink);
-  font-family:"Noto Sans JP",system-ui,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
-  line-height:1.9;font-size:16px;-webkit-font-smoothing:antialiased}
+  font-family:"Yu Gothic Medium",YuGothic,"游ゴシック体","Hiragino Kaku Gothic ProN","Noto Sans JP",system-ui,sans-serif;
+  line-height:1.95;font-size:16px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 img{max-width:100%;display:block}
-h1,h2,h3{font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;line-height:1.3;margin:0;font-weight:900}
-.wrap{max-width:1400px;margin:0 auto;padding:0 clamp(24px,4vw,72px)}
+h1,h2,h3{font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;line-height:1.42;margin:0;font-weight:700}
+.wrap{max-width:1320px;margin:0 auto;padding:0 clamp(24px,4vw,72px)}
 .en{font-family:"Anton",sans-serif;text-transform:uppercase;letter-spacing:.01em}
+/* セリフ英字ディスプレイ（M&A総研寄りの上品な見出し） */
+.disp{font-family:"Cormorant Garamond","Noto Serif JP",serif;font-weight:600;letter-spacing:.04em}
+.em{color:var(--brand);font-weight:inherit}
 .label{font-family:"Outfit",sans-serif;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
   font-size:11.5px;color:var(--brand)}
 
-/* 蛍光ペン風マーカー（編集感） */
+/* 蛍光ペン風マーカー（旧・編集感）— 新デザインでは使わないが shinsotsu 互換のため残置 */
 .mk{background-image:linear-gradient(transparent 56%,var(--mk) 56%);background-repeat:no-repeat;
   background-size:0% 100%;transition:background-size .85s cubic-bezier(.4,0,.2,1) .15s;padding:0 .06em}
 .in .mk,.mk.in{background-size:100% 100%}
@@ -64,30 +67,41 @@ h1,h2,h3{font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;line-height
 @media(max-width:940px){.nav a:not(.cta){display:none}}
 
 /* 汎用セクション見出し */
-.sec{padding:clamp(70px,10vw,130px) 0}
+.sec{padding:clamp(78px,11vw,146px) 0}
 .sec.white{background:var(--surface)}
-.shead{display:flex;align-items:baseline;gap:18px;margin-bottom:clamp(32px,5vw,56px)}
-.shead .no{font-family:"Anton";font-size:clamp(38px,6vw,84px);color:var(--line-2);line-height:.8}
-.shead .tx .label{margin-bottom:12px;display:block}
-.shead .tx h2{font-size:clamp(26px,4vw,52px)}
-.shead .tx p{color:var(--ink-2);margin:14px 0 0;font-size:clamp(15px,1.4vw,17px);max-width:60ch}
+.sec.deep{background:var(--dark);color:#fff}
+
+/* セクションヘッド（セリフ英字＋透かし＝M&A総研グラマー） */
+.shead{position:relative;margin-bottom:clamp(40px,6vw,74px);padding-top:clamp(28px,4vw,52px)}
+.shead .ghost{position:absolute;top:-.16em;left:-.03em;z-index:0;
+  font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(92px,17vw,210px);
+  line-height:1;color:currentColor;opacity:.055;white-space:nowrap;pointer-events:none;user-select:none}
+.shead .eyj{position:relative;z-index:1;display:flex;align-items:baseline;gap:20px;flex-wrap:wrap}
+.shead .eng{font-family:"Cormorant Garamond","Noto Serif JP",serif;font-weight:600;
+  font-size:clamp(42px,6.2vw,72px);letter-spacing:.03em;line-height:1;color:var(--brand-deep)}
+.shead .jp{font-family:"Zen Kaku Gothic New";font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--ink-2)}
+.shead h2{position:relative;z-index:1;font-size:clamp(25px,3.5vw,44px);margin-top:clamp(18px,2.4vw,28px);
+  line-height:1.5;font-weight:700}
+.shead p{position:relative;z-index:1;color:var(--ink-2);margin:18px 0 0;font-size:clamp(15px,1.4vw,17px);
+  max-width:64ch;line-height:1.95}
+.sec.deep .shead .eng{color:#fff}
+.sec.deep .shead .jp{color:rgba(255,255,255,.62)}
+.sec.deep .shead p{color:#cfc3cb}
 
 /* ヒーロー（共通の枠。写真は各ページで差し替え） */
 .hero{position:relative;display:flex;align-items:flex-end;overflow:hidden;color:#fff}
 .hero .photo{position:absolute;inset:0;background:
-   linear-gradient(180deg,rgba(24,16,21,.15),rgba(24,16,21,.78)),
-   linear-gradient(115deg,var(--dark),var(--dark-2) 55%,#3a1830)}
-.hero .photo::after{content:"";position:absolute;inset:0;opacity:.5;
-  background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.04) 0 2px,transparent 2px 9px)}
+   linear-gradient(180deg,rgba(20,12,17,.28),rgba(20,12,17,.72) 62%,rgba(20,12,17,.9)),
+   linear-gradient(118deg,var(--dark),var(--dark-2) 60%,#331726)}
 .hero .cm{position:absolute;color:var(--brand);pointer-events:none}
 .photo-tag{position:absolute;top:88px;right:clamp(20px,4vw,72px);z-index:3;display:flex;align-items:center;gap:8px;
   font-family:"Outfit";font-size:11px;letter-spacing:.1em;color:rgba(255,255,255,.6);
   border:1px solid rgba(255,255,255,.25);padding:6px 12px}
 .photo-tag svg{width:14px;height:14px}
 .hero .inner{position:relative;z-index:2;width:100%;padding:0 0 clamp(48px,8vh,96px)}
-.hero .kick{font-family:"Anton";line-height:.86;color:rgba(255,255,255,.13)}
-.hero h1{font-weight:900;letter-spacing:.02em;text-shadow:0 2px 30px rgba(0,0,0,.4)}
-.hero h1 .mk{--mk:rgba(228,0,127,.85);color:#fff}
+.hero .kick{font-family:"Cormorant Garamond",serif;font-weight:600;line-height:1;color:rgba(255,255,255,.92)}
+.hero h1{font-weight:700;letter-spacing:.03em;text-shadow:0 2px 34px rgba(0,0,0,.42)}
+.hero h1 .em{color:var(--pink)}
 .hero .lead{color:#e4dbe1}
 
 /* 右サイド縦タブ ＋ トップへ戻る */
@@ -117,7 +131,7 @@ h1,h2,h3{font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;line-height
 
 /* Entryバンド（共通ベース） */
 .entry-band{position:relative;background:var(--dark);color:#fff;text-align:center;overflow:hidden}
-.entry-band .big{font-family:"Anton"}
+.entry-band .big{font-family:"Cormorant Garamond",serif;font-weight:600;letter-spacing:.03em}
 
 /* フッター */
 footer{background:var(--surface);border-top:1px solid var(--line)}
