@@ -41,6 +41,21 @@
   .reason-photo::before{left:-10px;bottom:-10px}
 }
 
+/* 募集要項（中途／新卒共通） */
+.jobtags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:clamp(26px,4vw,38px)}
+.jobtags span{font-size:13.5px;font-weight:700;font-family:"Zen Kaku Gothic New";color:var(--brand-deep);
+  border:1px solid var(--line-2);border-radius:99px;padding:8px 18px;background:var(--surface)}
+.reqs{border-top:1px solid var(--line)}
+.reqs>div{display:grid;grid-template-columns:210px 1fr;gap:24px;padding:20px 4px;border-bottom:1px solid var(--line)}
+.reqs dt{font-family:"Zen Kaku Gothic New";font-weight:700;font-size:14.5px;color:var(--ink)}
+.reqs dd{margin:0;font-size:14.5px;color:var(--ink-2);line-height:1.95}
+.reqs .flow{display:flex;flex-wrap:wrap;align-items:center;gap:9px}
+.reqs .flow b{font-family:"Zen Kaku Gothic New";font-weight:700;color:var(--ink);background:var(--paper);
+  border:1px solid var(--line-2);border-radius:4px;padding:7px 15px;font-size:13px}
+.reqs .flow i{color:var(--brand);font-style:normal;font-weight:700}
+.reqs-note{font-size:12px;color:var(--ink-3);margin-top:20px}
+@media(max-width:680px){.reqs>div{grid-template-columns:1fr;gap:6px}}
+
 /* ① 経営理念（三角形） */
 .phi{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,64px);align-items:center}
 .phi .mission{font-size:clamp(24px,3.4vw,40px);line-height:1.5;font-weight:900;font-family:"Zen Kaku Gothic New";margin-top:14px}
