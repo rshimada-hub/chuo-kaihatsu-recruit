@@ -146,3 +146,51 @@
 .entry-band .btns a.fill{background:var(--brand);color:#fff}
 .entry-band .btns a.fill:hover{background:var(--brand-deep);transform:translateY(-2px)}
 .entry-band .btns a svg{width:18px;height:18px}
+
+/* ============ 募集要項ページ 拡充コンポーネント ============ */
+.req-intro{color:var(--ink-2);font-size:clamp(15px,1.4vw,17px);line-height:1.95;max-width:64ch;margin-top:8px}
+
+/* 職種カード（募集要項内） */
+.rjobs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:8px}
+.rjob{border:1px solid var(--line);background:var(--surface);border-radius:var(--r);padding:24px 26px;transition:.18s}
+.rjob:hover{border-color:var(--brand);transform:translateY(-2px);box-shadow:var(--shadow)}
+.rjob .jn{font-family:"Outfit";font-weight:700;font-size:11px;letter-spacing:.08em;color:var(--brand)}
+.rjob h4{font-size:17px;margin-top:7px;font-weight:700}
+.rjob p{font-size:13px;color:var(--ink-2);margin-top:9px;line-height:1.85}
+@media(max-width:720px){.rjobs{grid-template-columns:1fr}}
+
+/* 給与・キャリア */
+.payref{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+.pc{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.pc .pl{font-family:"Outfit";font-weight:700;font-size:11px;letter-spacing:.1em;color:var(--brand)}
+.pc h4{font-size:16px;margin-top:8px;font-weight:700}
+.pc .big-num{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:34px;color:var(--brand-deep);line-height:1.1;margin-top:6px}
+.pc p{font-size:13px;color:var(--ink-2);margin-top:8px;line-height:1.85}
+@media(max-width:760px){.payref{grid-template-columns:1fr}}
+
+/* 待遇・福利厚生グリッド */
+.perks{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:8px}
+.perk{background:var(--surface);padding:22px 20px}
+.perk .ic{width:38px;height:38px;border-radius:8px;background:var(--mk);color:var(--brand);display:grid;place-items:center;margin-bottom:12px}
+.perk .ic svg{width:20px;height:20px}
+.perk h4{font-size:14px;font-weight:700}
+.perk p{font-size:12px;color:var(--ink-2);margin-top:5px;line-height:1.7}
+@media(max-width:860px){.perks{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.perks{grid-template-columns:1fr}}
+
+/* 選考フロー（詳細ステップ） */
+.steps{display:grid;gap:14px;margin-top:8px}
+.step{display:grid;grid-template-columns:60px 1fr;gap:18px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px}
+.step .sn{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:36px;color:var(--brand);line-height:1}
+.step h4{font-size:16px;font-weight:700}
+.step p{font-size:13px;color:var(--ink-2);margin-top:5px;line-height:1.8}
+
+/* FAQ */
+.faq{border-top:1px solid var(--line);margin-top:8px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:20px 4px;font-family:"Zen Kaku Gothic New";font-weight:700;font-size:15px;display:flex;gap:14px;align-items:baseline}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";font-family:"Cormorant Garamond",serif;font-weight:700;color:var(--brand);font-size:22px}
+.faq summary .qx{margin-left:auto;color:var(--ink-3);transition:.2s;font-size:20px;line-height:1}
+.faq details[open] summary .qx{transform:rotate(45deg)}
+.faq .a{padding:0 4px 22px 34px;font-size:14px;color:var(--ink-2);line-height:1.95}
