@@ -333,3 +333,77 @@ h1,h2,h3,h4,blockquote,.ck-story b,.steps b,.jobs dt,.facts dt,.pay h3,.minfo h4
 .sec.deep.closing::before{content:"";position:absolute;left:0;right:0;bottom:100%;height:clamp(48px,7vw,110px);background:var(--ck-color-night);clip-path:polygon(100% 0,100% 100%,0 100%);pointer-events:none}
 #voices{padding-bottom:clamp(40px,5vw,72px)}
 @media (max-width:700px){.opening .msg > div:last-child{margin-bottom:calc(-1 * clamp(24px,6vw,48px))}}
+
+/* ============ v2.2：参考（M&A総研 recruits）の作法 ============ */
+/* 均一で控えめな余白 */
+.sec{padding-block:clamp(64px,8vw,112px)}
+.sec.tight{padding-top:clamp(32px,4vw,64px)}
+/* 斜めの疑似要素はやめ、写真で繋ぐ */
+.sec.deep.opening::after,.sec.deep.closing::before{display:none}
+.sec.deep.opening{padding-bottom:clamp(64px,8vw,112px)}
+.opening .msg > div:last-child{margin-bottom:0}
+.sec.deep.closing{margin-top:0;padding-top:clamp(64px,8vw,112px)}
+.sec.after-deep{padding-top:clamp(64px,8vw,112px)}
+.sec.after-deep .ck-shead{padding-top:0}
+#voices{padding-bottom:clamp(64px,8vw,112px)}
+#growth{padding-top:clamp(64px,8vw,112px)}
+
+/* 濃色セクション＝写真の上に暗幕（板にしない） */
+.photo-sec{position:relative;isolation:isolate}
+.photo-sec .photo-bg{position:absolute;inset:0;z-index:-1;overflow:hidden;
+  background:radial-gradient(120% 80% at 80% 20%,#6a4258 0%,#3a2231 45%,#1c1017 100%)}
+.photo-sec .photo-bg::before{content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 1px,transparent 1px 90px),repeating-linear-gradient(0deg,rgba(255,255,255,.03) 0 1px,transparent 1px 70px);mix-blend-mode:screen}
+.photo-sec .photo-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,16,23,.55),rgba(28,16,23,.86))}
+.photo-sec .photo-bg span{position:absolute;right:var(--ck-s5);bottom:var(--ck-s4);z-index:1;font-size:12px;color:rgba(255,255,255,.55)}
+
+/* 章の頭：英字の透かし＋中央揃えの和文見出し（参考ページの背骨） */
+.ck-shead.c{justify-items:center;text-align:center;position:relative;padding-top:clamp(40px,5vw,72px);margin-left:auto;margin-right:auto}
+.ck-shead.c .ghost{position:absolute;left:50%;top:0;transform:translateX(-50%);font-family:var(--ck-font-display-en);font-style:italic;font-weight:600;font-size:clamp(64px,10vw,150px);line-height:1;color:var(--ck-color-brand);opacity:.07;white-space:nowrap;pointer-events:none;user-select:none}
+.deep .ck-shead.c .ghost{color:#fff;opacity:.08}
+.ck-shead.c .seg{width:40px;height:10px;clip-path:polygon(0 100%,15px 0,100% 0,calc(100% - 15px) 100%)}
+.ck-shead.c h2{position:relative}
+.ck-shead.c p{text-align:center}
+
+/* 写真の帯（章と章の橋） */
+.band{position:relative;height:clamp(240px,34vw,460px);background:linear-gradient(120deg,#8a6a78,#5a3a4c 50%,#2c1522);display:grid;place-items:center;color:#fff;overflow:hidden}
+.band::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 1px,transparent 1px 120px)}
+.band .q{position:relative;font-family:var(--ck-font-display-jp);font-weight:600;font-size:clamp(22px,3vw,40px);line-height:1.5;text-align:center;text-shadow:0 2px 24px rgba(0,0,0,.4);padding:0 var(--ck-gutter)}
+.band .lab{position:absolute;right:var(--ck-s5);bottom:var(--ck-s4);font-size:12px;color:rgba(255,255,255,.6)}
+
+/* 写真コラージュ（社内旅行・研修・視察） */
+.collage{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:clamp(110px,14vw,200px);gap:4px;background:var(--ck-color-night)}
+.collage .ph{background:#4a2f3f;color:#e4dbe1;font-size:12px;position:relative}
+.collage .ph:nth-child(3n){background:#5a3a4c}.collage .ph:nth-child(3n+1){background:#3f2635}
+.collage .ph.w2{grid-column:span 2}.collage .ph.h2{grid-row:span 2}
+.collage .ph i{position:absolute;left:10px;top:8px;font-style:normal;font-size:11px;font-weight:700;color:#fff;background:rgba(228,0,127,.9);padding:2px 8px}
+@media (max-width:700px){.collage{grid-template-columns:repeat(3,1fr)}}
+
+/* FV：斜めに切った写真パネルが右に重なる（参考のヒーロー） */
+.hero{grid-template-columns:auto minmax(0,1fr) minmax(0,.9fr);min-height:min(82svh,860px)}
+.hero .bg{background:linear-gradient(90deg,rgba(28,16,23,.92) 0%,rgba(28,16,23,.6) 45%,rgba(28,16,23,.25) 100%),radial-gradient(120% 90% at 85% 10%,#5a3a4c,#2c1522 60%,#1c1017)}
+.hero .panels{position:relative;align-self:stretch;min-height:360px}
+.hero .panels .ph{position:absolute;color:#e4dbe1}
+.hero .panels .p1{left:0;top:6%;width:64%;height:62%;background:#7a5a6a;clip-path:polygon(24% 0,100% 0,76% 100%,0 100%)}
+.hero .panels .p2{right:0;bottom:4%;width:56%;height:54%;background:#5a3a4c;clip-path:polygon(24% 0,100% 0,76% 100%,0 100%)}
+@media (max-width:1000px){.hero{grid-template-columns:auto minmax(0,1fr)}.hero .panels{display:none}}
+
+/* 魅力：斜めに切った写真＋大きな番号（参考の Merit） */
+.ck-reason .ph{clip-path:polygon(14% 0,100% 0,86% 100%,0 100%)}
+.ck-reason .no{font-family:var(--ck-font-display-en);font-weight:600;font-size:clamp(72px,9vw,128px);line-height:1;color:var(--ck-color-brand);opacity:.18;margin-bottom:-.35em}
+.ck-reason .body{position:relative}
+
+/* 理念のバリューを3列に */
+.values.three{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--ck-s6);border-top:none;padding-top:0}
+.values.three>div{grid-template-columns:1fr;gap:10px;border-top:2px solid var(--ck-border);padding-top:var(--ck-s4)}
+.values.three b{font-size:20px}
+.values.three p{color:var(--ck-fg-muted)}
+@media (max-width:700px){.values.three{grid-template-columns:1fr}}
+#philosophy .phi{grid-template-columns:1fr;justify-items:center;text-align:center}
+#philosophy .mission{font-size:clamp(28px,3.8vw,44px)}
+#philosophy .vision{text-align:left}
+
+/* 魅力：写真をやや小さく、間隔を詰める */
+.ck-reason{grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px)}
+.ck-reason .ph{aspect-ratio:3/2}
+.reasons{gap:clamp(32px,5vw,72px)}
