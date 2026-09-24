@@ -1,0 +1,117 @@
+/* =====================================================================
+   中央開発 採用サイト デザイントークン — "Hexa" v1.1 (2026-09-24)
+   このファイルは定義書と採用サイト本体の両方で共有する唯一の真実。
+   命名: --ck-{分類}-{名前}   （ck = Chuo Kaihatsu）
+   ===================================================================== */
+:root{
+  /* ---- Color: brand ---- */
+  --ck-color-brand:#E4007F;        /* 六角形Cのマゼンタ。大きな文字・図形・面に */
+  --ck-color-brand-deep:#C1006C;   /* 文字用マゼンタ（白地 6.03:1 / AA） */
+  --ck-color-brand-ink:#9E0058;    /* 小さな文字・リンク（白地 8.09:1 / AAA） */
+  --ck-color-plum:#7D1E56;         /* 補助（白地 9.58:1 / AAA） */
+  --ck-color-pink:#FF67B0;         /* 濃色地の上でのマゼンタ（夜地 6.88:1） */
+
+  /* ---- Color: neutrals（わずかにマゼンタ寄りの暖色グレー） ---- */
+  --ck-color-ink:#1B1519;
+  --ck-color-ink-2:#5B5058;
+  --ck-color-ink-3:#938994;        /* 18px以上 or 装飾のみ（3.2:1） */
+  --ck-color-paper:#FAF8F7;
+  --ck-color-surface:#FFFFFF;
+  --ck-color-line:#ECE5E9;
+  --ck-color-line-2:#DCCFD7;
+  --ck-color-night:#1C1017;        /* 濃色セクションの地 */
+  --ck-color-night-2:#2C1522;
+
+  /* ---- Color: semantic（役割で参照する。直接色名を書かない） ---- */
+  --ck-bg:var(--ck-color-paper);
+  --ck-bg-elev:var(--ck-color-surface);
+  --ck-bg-inverse:var(--ck-color-night);
+  --ck-fg:var(--ck-color-ink);
+  --ck-fg-muted:var(--ck-color-ink-2);
+  --ck-fg-subtle:var(--ck-color-ink-3);
+  --ck-fg-inverse:#FFFFFF;
+  --ck-fg-inverse-muted:#CFC3CB;
+  --ck-border:var(--ck-color-line);
+  --ck-border-strong:var(--ck-color-line-2);
+  --ck-accent:var(--ck-color-brand);
+  --ck-accent-text:var(--ck-color-brand-deep);
+  --ck-accent-link:var(--ck-color-brand-ink);
+  --ck-accent-on-inverse:var(--ck-color-pink);
+  --ck-focus:var(--ck-color-brand-deep);
+
+  /* ---- Data viz（成長グラフ等の積み上げ。手前ほど明るく） ---- */
+  --ck-viz-1:#7D1E56;
+  --ck-viz-2:#B31570;
+  --ck-viz-3:#E4007F;
+  --ck-viz-4:#FF67B0;
+
+  /* ---- Typography: families ---- */
+  --ck-font-display-jp:"Shippori Mincho B1","Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
+  --ck-font-display-en:"Cormorant Garamond","Noto Serif JP",Georgia,serif;
+  --ck-font-body:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;
+
+  /* ---- Typography: styles（サイズ/行間/字間をセットで持つ） ---- */
+  --ck-type-disp-72:clamp(40px,6.4vw,72px); --ck-lh-disp:1.18; --ck-ls-disp:.02em;
+  --ck-type-disp-56:clamp(34px,5vw,56px);
+  --ck-type-h1-40:clamp(30px,3.6vw,40px);  --ck-lh-h1:1.35;
+  --ck-type-h2-32:clamp(24px,2.8vw,32px);  --ck-lh-h2:1.4;
+  --ck-type-h3-24:clamp(20px,2vw,24px);    --ck-lh-h3:1.5;
+  --ck-type-lead-18:clamp(16px,1.4vw,18px);--ck-lh-lead:1.9;
+  --ck-type-body-16:16px;                  --ck-lh-body:1.9;  --ck-ls-body:.01em;
+  --ck-type-small-14:14px;                 --ck-lh-small:1.7;
+  --ck-type-caption-12:12px;               --ck-lh-caption:1.6;
+  --ck-type-num:clamp(48px,7vw,88px);       /* 主役の数字（Cormorant） */
+
+  /* ---- Space（8pt グリッド。s1=4 … s12=160） ---- */
+  --ck-s1:4px; --ck-s2:8px; --ck-s3:12px; --ck-s4:16px; --ck-s5:24px; --ck-s6:32px;
+  --ck-s7:48px; --ck-s8:64px; --ck-s9:80px; --ck-s10:96px; --ck-s11:128px; --ck-s12:160px;
+  --ck-section-y:clamp(var(--ck-s9),11vw,var(--ck-s12));   /* セクション上下 */
+  --ck-gutter:clamp(var(--ck-s5),4vw,var(--ck-s8));         /* 左右ガター */
+
+  /* ---- Layout ---- */
+  --ck-content:1200px;   /* 本文コンテナ */
+  --ck-wide:1440px;      /* ワイド（グラフ・写真帯） */
+  --ck-measure:64ch;     /* 本文の最大行長 */
+  --ck-bp-sm:600px; --ck-bp-md:900px; --ck-bp-lg:1200px;
+
+  /* ---- Shape / Elevation ---- */
+  --ck-radius-0:0;       /* 写真・面：角丸なし（エディトリアル） */
+  --ck-radius-1:4px;     /* ボタン・入力 */
+  --ck-radius-pill:999px;/* タグ・ピル（CTA周辺のみ） */
+  --ck-shadow-photo:0 30px 70px -32px rgba(27,21,25,.42); /* 浮かせる写真だけに */
+  --ck-shadow-soft:0 12px 32px -20px rgba(27,21,25,.35);
+
+  /* ---- Motion ---- */
+  --ck-dur-fast:200ms; --ck-dur-base:400ms; --ck-dur-slow:700ms;
+  --ck-ease:cubic-bezier(.2,.8,.2,1);
+  --ck-ease-in-out:cubic-bezier(.65,0,.35,1);
+
+  /* ---- Brand mark & geometry（公式ロゴから実測） ---- */
+  --ck-mark-min:24px;             /* 最小表示サイズ（高さ） */
+  --ck-mark-ratio:0.8652;         /* マークの幅÷高さ */
+  --ck-diag:30deg;                /* 斜辺の角度（水平から）*/
+  --ck-tan:0.5774;                /* tan30° … 斜めカットの計算用 */
+  --ck-cut:26px;                  /* ボタン等の斜め端（高さ46px×tan30°） */
+  --ck-cut-lg:clamp(32px,5vw,64px);/* 写真のコーナーカット幅 */
+  --ck-hex:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%); /* 六角形マスク（ロゴと同比率で使う） */
+}
+
+/* ダーク：役割トークンだけを差し替える（色名トークンは触らない） */
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ck-bg:#120D10; --ck-bg-elev:#1A1319; --ck-bg-inverse:#0B0709;
+    --ck-fg:#F4EEF2; --ck-fg-muted:#B3A8B1; --ck-fg-subtle:#867C86;
+    --ck-border:#2A232A; --ck-border-strong:#3B323A;
+    --ck-accent-text:var(--ck-color-pink); --ck-accent-link:#FF8CC6; --ck-focus:var(--ck-color-pink);
+    --ck-shadow-photo:0 34px 80px -32px rgba(0,0,0,.75); --ck-shadow-soft:0 12px 32px -20px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ck-bg:#120D10; --ck-bg-elev:#1A1319; --ck-bg-inverse:#0B0709;
+  --ck-fg:#F4EEF2; --ck-fg-muted:#B3A8B1; --ck-fg-subtle:#867C86;
+  --ck-border:#2A232A; --ck-border-strong:#3B323A;
+  --ck-accent-text:var(--ck-color-pink); --ck-accent-link:#FF8CC6; --ck-focus:var(--ck-color-pink);
+  --ck-shadow-photo:0 34px 80px -32px rgba(0,0,0,.75); --ck-shadow-soft:0 12px 32px -20px rgba(0,0,0,.7);
+}
