@@ -279,3 +279,10 @@ h1,h2,h3,h4,blockquote,.ck-story b,.steps b,.jobs dt,.facts dt,.pay h3,.minfo h4
 
 /* FV縦組み：2列を明示（<br>）。句点だけが3列目に落ちないようにする */
 .hero .vert{height:auto;overflow-wrap:normal;word-break:keep-all;font-size:clamp(30px,4.2vw,56px)}
+
+/* 分岐パネル：中身を各パネルの中央に（縦横） */
+.panel{text-align:center;justify-items:center;align-content:center;min-height:420px}
+.panel p{margin-inline:auto}
+.panel .ck-btn{justify-self:center}
+.panel .seg{margin-inline:auto}
+@media (max-width:700px){.panel{min-height:0}}
