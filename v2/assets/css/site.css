@@ -286,3 +286,6 @@ h1,h2,h3,h4,blockquote,.ck-story b,.steps b,.jobs dt,.facts dt,.pay h3,.minfo h4
 .panel .ck-btn{justify-self:center}
 .panel .seg{margin-inline:auto}
 @media (max-width:700px){.panel{min-height:0}}
+
+/* 右端タブ：同色の面の上でも輪郭が分かるよう、左辺に白の細線 */
+.rail a{box-shadow:inset 2px 0 0 rgba(255,255,255,.7)}
