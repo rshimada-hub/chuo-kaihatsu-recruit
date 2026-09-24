@@ -57,7 +57,8 @@ a{color:inherit}
 .ck-link{color:var(--ck-accent-link);text-decoration:underline;text-underline-offset:4px;font-weight:700}
 
 /* セクション見出し */
-.ck-shead{display:grid;gap:var(--ck-s4);max-width:var(--ck-measure);margin-bottom:clamp(36px,5vw,56px)}
+.ck-shead{display:grid;gap:var(--ck-s4);margin-bottom:clamp(36px,5vw,56px)}
+.ck-shead p{max-width:var(--ck-measure)}
 .ck-shead h2{font-family:var(--ck-font-display-jp);font-weight:600;font-size:var(--ck-type-h1-40);line-height:var(--ck-lh-h1)}
 .ck-shead p{color:var(--ck-fg-muted);font-size:var(--ck-type-lead-18);line-height:var(--ck-lh-lead)}
 
@@ -233,3 +234,23 @@ footer .copy{font-size:11.5px;color:var(--ck-fg-subtle)}
 .ck-faq .a{padding:0 4px var(--ck-s4) 30px;font-size:14.5px;color:var(--ck-fg-muted);line-height:1.9}
 .entry-cta{text-align:left}
 .entry-cta .row{display:flex;flex-wrap:wrap;gap:var(--ck-s4);align-items:center;margin-top:var(--ck-s6)}
+
+/* 見出しの改行：単語の途中で折らない（読点・明示改行・wbr でだけ折る） */
+h1,h2,h3,h4,blockquote,.ck-story b,.steps b,.jobs dt,.facts dt,.pay h3,.minfo h4{word-break:keep-all;overflow-wrap:anywhere;line-break:strict}
+.ck-shead h2,.ck-reason h3,.msg h2{max-width:28ch}
+
+/* フローティングバナー（右端の縦タブ＝縦にしたセグメント。FVを過ぎたら出る） */
+.rail{position:fixed;right:0;top:50%;z-index:45;display:flex;flex-direction:column;gap:6px;transform:translate(110%,-50%);transition:transform var(--ck-dur-base) var(--ck-ease)}
+.rail.on{transform:translate(0,-50%)}
+.rail a{writing-mode:vertical-rl;text-decoration:none;color:#fff;font-weight:700;font-size:14.5px;letter-spacing:.14em;padding:30px 15px 30px 16px;
+  clip-path:polygon(0 27px,100% 0,100% 100%,0 calc(100% - 27px));transition:padding var(--ck-dur-fast) var(--ck-ease)}
+.rail a:hover{padding-left:24px}
+.rail a.s{background:var(--ck-color-brand)}
+.rail a.c{background:var(--ck-color-plum)}
+.rail a.e{background:var(--ck-color-brand)}
+@media (max-width:640px){
+  .rail{top:auto;bottom:0;left:0;right:0;flex-direction:row;gap:0;transform:translateY(110%)}
+  .rail.on{transform:none}
+  .rail a{writing-mode:horizontal-tb;flex:1;text-align:center;padding:16px 12px;clip-path:none;letter-spacing:.06em;font-size:14px}
+  footer{padding-bottom:calc(var(--ck-s6) + 56px)}
+}
