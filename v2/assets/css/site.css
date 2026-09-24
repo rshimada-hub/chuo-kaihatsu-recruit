@@ -272,3 +272,7 @@ h1,h2,h3,h4,blockquote,.ck-story b,.steps b,.jobs dt,.facts dt,.pay h3,.minfo h4
   .steps>div{border-top:2px solid var(--ck-border);padding-top:var(--ck-s5)}
   .steps>div::before{top:-7px}
 }
+
+/* 濃色地の上の副ボタンは白塗り・墨文字（墨塗りだと地に溶ける） */
+.hero .ck-btn.line,.deep .ck-btn.line{background:#fff;color:var(--ck-color-ink)}
+.hero .ck-btn.line:hover,.deep .ck-btn.line:hover{background:#F4EEF2}
