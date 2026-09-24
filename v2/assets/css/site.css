@@ -407,3 +407,10 @@ h1,h2,h3,h4,blockquote,.ck-story b,.steps b,.jobs dt,.facts dt,.pay h3,.minfo h4
 .ck-reason{grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px)}
 .ck-reason .ph{aspect-ratio:3/2}
 .reasons{gap:clamp(32px,5vw,72px)}
+
+/* FV→社長メッセージ：境目をグラデーションで溶かす（夜地から写真の明るさへ） */
+.sec.deep.opening .photo-bg{background:linear-gradient(180deg,#1c1017 0,rgba(28,16,23,0) 360px),radial-gradient(120% 80% at 80% 30%,#6a4258 0%,#3a2231 45%,#1c1017 100%)}
+.sec.deep.opening .photo-bg::before{-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 360px);mask-image:linear-gradient(180deg,transparent 0,#000 360px)}
+.hero .bg span{bottom:var(--ck-s6)}
+/* コラージュ→人を育てる も同様に */
+.sec.deep.closing .photo-bg{background:linear-gradient(180deg,#1c1017 0,rgba(28,16,23,0) 300px),radial-gradient(120% 80% at 20% 40%,#5a3a4c 0%,#3a2231 45%,#1c1017 100%)}
