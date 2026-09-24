@@ -254,3 +254,21 @@ h1,h2,h3,h4,blockquote,.ck-story b,.steps b,.jobs dt,.facts dt,.pay h3,.minfo h4
   .rail a{writing-mode:horizontal-tb;flex:1;text-align:center;padding:16px 12px;clip-path:none;letter-spacing:.06em;font-size:14px}
   footer{padding-bottom:calc(var(--ck-s6) + 56px)}
 }
+
+/* スマホ：ヘッダーを折り返さない／年表・選考ステップは各項目の上に罫線と目印 */
+@media (max-width:900px){
+  .hd .in{gap:12px;height:64px}
+  .hd .brand b{font-size:13.5px;white-space:nowrap}
+  .hd nav .ck-btn.sm{white-space:nowrap;height:38px;font-size:13.5px;padding:0 calc(20px + 12px) 0 14px;clip-path:polygon(0 0,100% 0,calc(100% - 20px) 100%,0 100%)}
+  .hero{padding-top:calc(64px + var(--ck-s7))}
+}
+@media (max-width:600px){
+  .ck-story{border-top:none;padding-top:0;gap:var(--ck-s4)}
+  .ck-story>div{border-top:2px solid var(--ck-border);padding-top:var(--ck-s5)}
+  .ck-story>div::before{top:-7px}
+}
+@media (max-width:500px){
+  .steps,.steps.four{border-top:none;padding-top:0;gap:var(--ck-s4)}
+  .steps>div{border-top:2px solid var(--ck-border);padding-top:var(--ck-s5)}
+  .steps>div::before{top:-7px}
+}
