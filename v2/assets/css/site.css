@@ -414,3 +414,14 @@ h1,h2,h3,h4,blockquote,.ck-story b,.steps b,.jobs dt,.facts dt,.pay h3,.minfo h4
 .hero .bg span{bottom:var(--ck-s6)}
 /* コラージュ→人を育てる も同様に */
 .sec.deep.closing .photo-bg{background:linear-gradient(180deg,#1c1017 0,rgba(28,16,23,0) 300px),radial-gradient(120% 80% at 20% 40%,#5a3a4c 0%,#3a2231 45%,#1c1017 100%)}
+
+/* v2.3：セグメント（平行四辺形の目印）を全廃 */
+.seg{display:none!important}
+.ck-story>div::before,.steps>div::before,.ck-faq summary::before,.vision li::before{display:none}
+.vision li{padding-left:0}
+.jobs>div,.facts dl>div,.values>div,.values.three>div{grid-template-columns:1fr}
+.jobs dt,.jobs dd,.facts dt,.facts dd{grid-column:1}
+.ck-faq .a{padding-left:4px}
+.ck-shead{gap:var(--ck-s3)}
+.hero .side{gap:var(--ck-s4)}
+.ck-story>div{padding-top:var(--ck-s4)}
