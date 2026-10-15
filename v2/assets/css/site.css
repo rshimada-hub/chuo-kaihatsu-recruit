@@ -462,3 +462,9 @@ h1,h2,h3,h4,blockquote,.ck-story b,.steps b,.jobs dt,.facts dt,.pay h3,.minfo h4
 .done .back{margin-top:var(--ck-s5)}
 
 .svgdefs{position:absolute;width:0;height:0}
+
+/* 個人情報の取り扱い */
+.policy{max-width:var(--ck-measure);margin:0 auto;display:grid;gap:var(--ck-s3)}
+.policy h2{font-size:18px;font-weight:700;margin-top:var(--ck-s5)}
+.policy p{color:var(--ck-fg-muted);line-height:1.95}
+.policy .rev{margin-top:var(--ck-s6);font-size:13px;color:var(--ck-fg-subtle)}
