@@ -476,3 +476,10 @@ h1,h2,h3,h4,blockquote,.ck-story b,.steps b,.jobs dt,.facts dt,.pay h3,.minfo h4
 .hero .vert,.hero .side,.hero .panels{z-index:2}
 @media (prefers-reduced-motion:reduce){.hero .bg .fv{display:none}.hero .bg{background-image:url("../video/fv-poster.jpg");background-size:cover;background-position:62% 50%}}
 @media (max-width:700px){.hero{grid-template-columns:1fr !important}.hero .bg .fv{object-position:50% 50%}}
+/* 見出し級テキストの改行：単語途中・2〜3文字だけの折り返しを防ぐ */
+.mission{word-break:keep-all;overflow-wrap:anywhere;line-break:strict}
+#philosophy .mission{word-break:keep-all}
+@media (max-width:700px){#philosophy .mission{font-size:26px;line-height:1.5}}
+br.sp{display:none}
+@media (max-width:700px){br.sp{display:inline}.ck-shead h2{font-size:28px}.ck-reason h3{font-size:26px}.band .q{font-size:22px;word-break:keep-all}}
+@media (max-width:700px){.ck-reason{grid-template-columns:1fr}.ck-reason .body{min-width:0}}
