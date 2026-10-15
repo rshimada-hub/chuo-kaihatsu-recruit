@@ -468,3 +468,11 @@ h1,h2,h3,h4,blockquote,.ck-story b,.steps b,.jobs dt,.facts dt,.pay h3,.minfo h4
 .policy h2{font-size:18px;font-weight:700;margin-top:var(--ck-s5)}
 .policy p{color:var(--ck-fg-muted);line-height:1.95}
 .policy .rev{margin-top:var(--ck-s6);font-size:13px;color:var(--ck-fg-subtle)}
+
+/* ---- v2.4 FV video ---- */
+.hero .bg .fv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 50%;z-index:0}
+.hero .bg::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(28,16,23,.92) 0%,rgba(28,16,23,.62) 40%,rgba(28,16,23,.28) 72%,rgba(28,16,23,.45) 100%),linear-gradient(180deg,rgba(28,16,23,.35) 0%,rgba(28,16,23,0) 35%,rgba(28,16,23,.55) 100%)}
+.hero .bg .credit{z-index:2;font-size:11px;color:rgba(255,255,255,.45);letter-spacing:.04em}
+.hero .vert,.hero .side,.hero .panels{z-index:2}
+@media (prefers-reduced-motion:reduce){.hero .bg .fv{display:none}.hero .bg{background-image:url("../video/fv-poster.jpg");background-size:cover;background-position:62% 50%}}
+@media (max-width:700px){.hero{grid-template-columns:1fr !important}.hero .bg .fv{object-position:50% 50%}}
