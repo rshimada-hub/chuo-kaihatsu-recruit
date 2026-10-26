@@ -497,3 +497,9 @@ br.sp{display:none}
 .goal-list li{position:relative;padding:14px 0 0;border-top:2px solid var(--ck-border);font-size:14.5px;line-height:1.85;color:var(--ck-fg-muted)}
 .goal-list li::before{content:"";position:absolute;top:-2px;left:0;width:40px;height:2px;background:var(--ck-color-brand)}
 @media (max-width:700px){.goal-h{display:block;font-size:30px;line-height:1.35}.goal-h .no1{vertical-align:baseline;margin:0 .06em}.goal-h .no1 .one{font-size:2.2em}.goal-list{grid-template-columns:1fr}}
+/* v2.7 先輩の声：動画つき */
+.ck-voice.vid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:center}
+.ck-voice.vid .video{width:100%}
+.ck-voice.vid:nth-of-type(odd) .video{order:2}
+.ck-voice.vid blockquote{word-break:keep-all;overflow-wrap:anywhere}
+@media (max-width:800px){.ck-voice.vid{grid-template-columns:1fr}.ck-voice.vid:nth-of-type(odd) .video{order:0}.ck-voice.vid p{max-width:none}}
