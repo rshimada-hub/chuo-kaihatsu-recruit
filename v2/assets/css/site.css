@@ -483,3 +483,17 @@ h1,h2,h3,h4,blockquote,.ck-story b,.steps b,.jobs dt,.facts dt,.pay h3,.minfo h4
 br.sp{display:none}
 @media (max-width:700px){br.sp{display:inline}.ck-shead h2{font-size:28px}.ck-reason h3{font-size:26px}.band .q{font-size:22px;word-break:keep-all}}
 @media (max-width:700px){.ck-reason{grid-template-columns:1fr}.ck-reason .body{min-width:0}}
+/* v2.6 社長のこれまで：動画なし → 1列 */
+.story.one{grid-template-columns:1fr}
+/* v2.6 2035年の目標：岩手県No.1を大きく */
+.goal{max-width:960px;margin:var(--ck-s8) auto 0;padding-top:var(--ck-s6);border-top:1px solid var(--ck-border);text-align:center}
+.goal-y{font-family:var(--ck-font-display-jp);font-weight:600;font-size:clamp(16px,1.6vw,20px);letter-spacing:.08em;color:var(--ck-fg-muted)}
+.goal-h{display:flex;align-items:baseline;justify-content:center;flex-wrap:wrap;gap:0 .12em;margin-top:var(--ck-s3);font-family:var(--ck-font-display-jp);font-weight:600;font-size:clamp(28px,4.2vw,52px);line-height:1.2;color:var(--ck-fg);word-break:keep-all}
+.goal-h .no1{display:inline-flex;align-items:baseline;color:var(--ck-color-brand);font-family:var(--ck-font-display-en);font-weight:700;line-height:1}
+.goal-h .no1 .n{font-size:.95em;letter-spacing:.02em}
+.goal-h .no1 .one{font-size:2.4em;margin-left:.04em}
+.goal-sub{margin-top:var(--ck-s3);font-size:clamp(14px,1.3vw,17px);color:var(--ck-fg-muted)}
+.goal-list{list-style:none;margin:var(--ck-s5) auto 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:var(--ck-s4);text-align:left;max-width:860px}
+.goal-list li{position:relative;padding:14px 0 0;border-top:2px solid var(--ck-border);font-size:14.5px;line-height:1.85;color:var(--ck-fg-muted)}
+.goal-list li::before{content:"";position:absolute;top:-2px;left:0;width:40px;height:2px;background:var(--ck-color-brand)}
+@media (max-width:700px){.goal-h{display:block;font-size:30px;line-height:1.35}.goal-h .no1{vertical-align:baseline;margin:0 .06em}.goal-h .no1 .one{font-size:2.2em}.goal-list{grid-template-columns:1fr}}
