@@ -503,3 +503,4 @@ br.sp{display:none}
 .ck-voice.vid:nth-of-type(odd) .video{order:2}
 .ck-voice.vid blockquote{word-break:keep-all;overflow-wrap:anywhere}
 @media (max-width:800px){.ck-voice.vid{grid-template-columns:1fr}.ck-voice.vid:nth-of-type(odd) .video{order:0}.ck-voice.vid p{max-width:none}}
+#growth .goal{margin-top:var(--ck-s8);padding-top:var(--ck-s7);border-top:1px solid var(--ck-border)}
