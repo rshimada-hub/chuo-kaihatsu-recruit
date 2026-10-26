@@ -504,3 +504,6 @@ br.sp{display:none}
 .ck-voice.vid blockquote{word-break:keep-all;overflow-wrap:anywhere}
 @media (max-width:800px){.ck-voice.vid{grid-template-columns:1fr}.ck-voice.vid:nth-of-type(odd) .video{order:0}.ck-voice.vid p{max-width:none}}
 #growth .goal{margin-top:var(--ck-s8);padding-top:var(--ck-s7);border-top:1px solid var(--ck-border)}
+/* v2.8 成長の見出し直下に岩手県No.1 */
+.growth-head .goal-h{margin:var(--ck-s4) 0 var(--ck-s4);font-size:clamp(26px,3.6vw,46px)}
+.growth-head>p:last-child{max-width:60ch}
