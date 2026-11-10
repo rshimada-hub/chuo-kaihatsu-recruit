@@ -507,3 +507,17 @@ br.sp{display:none}
 /* v2.8 成長の見出し直下に岩手県No.1 */
 .growth-head .goal-h{margin:var(--ck-s4) 0 var(--ck-s4);font-size:clamp(26px,3.6vw,46px)}
 .growth-head>p:last-child{max-width:60ch}
+/* v3.0 写真の組み込み */
+.hero .panels .ph img,.ck-reason .ph img,.collage .ph img{display:block;width:100%;height:100%;object-fit:cover}
+.hero .panels .ph{overflow:hidden;font-size:0}
+.hero .panels .p1 img{object-position:60% 30%}
+.ck-reason .ph{overflow:hidden;font-size:0}
+.collage .ph{overflow:hidden;font-size:0}
+.collage .ph img{transition:transform .6s ease}
+.collage .ph:hover img{transform:scale(1.04)}
+.collage .ph i{z-index:1}
+.photo-sec .photo-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(3px) saturate(.85);transform:scale(1.04)}
+.photo-sec .photo-bg::after{background:linear-gradient(180deg,rgba(28,16,23,.72),rgba(28,16,23,.9))}
+.band .bandimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%;z-index:0}
+.band::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,16,23,.45),rgba(28,16,23,.65));z-index:0}
+.band .q,.band span{z-index:1}
