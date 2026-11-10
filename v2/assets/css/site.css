@@ -521,3 +521,13 @@ br.sp{display:none}
 .band .bandimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%;z-index:0}
 .band::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,16,23,.45),rgba(28,16,23,.65));z-index:0}
 .band .q,.band span{z-index:1}
+/* v3.1 代表からのメッセージ（歩み） */
+.ck-shead .eyebrow{font-family:var(--ck-font-display-jp);font-weight:600;font-size:15px;letter-spacing:.14em;color:var(--ck-color-brand-deep);margin:0 0 var(--ck-s2);position:relative}
+#story .ck-shead>p:last-child{max-width:none}
+br.pc{display:inline}
+.story-close{max-width:44em;margin:var(--ck-s7) auto 0;text-align:center;font-size:clamp(15px,1.35vw,17px);line-height:2;color:var(--ck-fg)}
+.story-sign{margin-top:var(--ck-s4);text-align:center;font-size:13.5px;color:var(--ck-fg-muted)}
+.story-sign b{font-family:var(--ck-font-display-jp);font-weight:600;font-size:22px;color:var(--ck-fg);margin-left:14px;letter-spacing:.08em}
+@media (max-width:700px){br.pc{display:none}.story-close{text-align:left}.ck-story b{font-size:18px}}
+.story-close{margin-top:var(--ck-s6);max-width:none}
+@media (max-width:700px){#story .ck-shead>p:last-child{text-align:left}.story-close{margin-top:var(--ck-s5)}}
