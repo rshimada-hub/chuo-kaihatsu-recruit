@@ -531,3 +531,13 @@ br.pc{display:inline}
 @media (max-width:700px){br.pc{display:none}.story-close{text-align:left}.ck-story b{font-size:18px}}
 .story-close{margin-top:var(--ck-s6);max-width:none}
 @media (max-width:700px){#story .ck-shead>p:last-child{text-align:left}.story-close{margin-top:var(--ck-s5)}}
+/* v3.2 代表メッセージの締めに宣材写真 */
+.story-end{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center;max-width:960px;margin:var(--ck-s8) auto 0}
+.story-photo{margin:0;aspect-ratio:4/5;overflow:hidden;background:var(--ck-border)}
+.story-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.story-end .story-close{margin:0;text-align:left;font-family:var(--ck-font-display-jp);font-weight:600;font-size:clamp(18px,1.9vw,24px);line-height:1.9;word-break:keep-all;overflow-wrap:anywhere}
+.story-end .story-sign{text-align:left;margin-top:var(--ck-s5)}
+@media (max-width:700px){.story-end{grid-template-columns:1fr;gap:var(--ck-s5);margin-top:var(--ck-s6)}.story-photo{max-width:260px;margin:0 auto}.story-end .story-close{font-size:17px}}
+.story-end{grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:clamp(28px,4vw,56px);max-width:1000px}
+.story-end .story-close{font-size:clamp(17px,1.65vw,21px)}
+@media (max-width:700px){.story-end{grid-template-columns:1fr}.story-end .story-close{font-size:17px}}
